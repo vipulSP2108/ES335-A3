@@ -17,7 +17,7 @@ torch._dynamo.config.suppress_errors = True
 # Check for GPU
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # print(f"Supported Device: {device}\n\n")
-file = open("/Users/pranavs/Desktop/ES335A3/saved_models/1661-0.txt", "r")
+file = open("1661-0.txt", "r")
 Sherlock = file.read()
 filtered_text = re.sub(r"[^a-zA-Z0-9\s.]", "", Sherlock)  # Keep alphanumeric and period
 words = (filtered_text.lower().split())[0:int((107510)/2.5)]  # Split by whitespace and lowercase
@@ -42,7 +42,7 @@ class CustomMLPForNextWord(nn.Module):
 # Load model from file
 def load_model(vocab_size, embedding_dim, hidden_size, context_length, activation):
     model = CustomMLPForNextWord(vocab_size, embedding_dim, hidden_size, context_length, torch.relu).to(device)
-    model_filename = f"/Users/pranavs/Desktop/ES335A3/saved_models/model_state_emb{embedding_dim}_ctx{context_length}_{activation}.pth"
+    model_filename = f"model_state_emb{embedding_dim}_ctx{context_length}_{activation}.pth"
     model.load_state_dict(torch.load(model_filename, map_location=device))
     model.eval()
     return model
