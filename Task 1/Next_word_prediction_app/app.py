@@ -42,7 +42,7 @@ class CustomMLPForNextWord(nn.Module):
 # Load model from file
 def load_model(vocab_size, embedding_dim, hidden_size, context_length, activation):
     model = CustomMLPForNextWord(vocab_size, embedding_dim, hidden_size, context_length, torch.relu).to(device)
-    model_filename = f"/Users/pranavs/Desktop/ES335A3/saved_models/model_state_emb{embedding_dim}_ctx{context_length}_{activation}.pth"
+    model_filename = f"Task 1/Next_word_prediction_app/model_state_emb{embedding_dim}_ctx{context_length}_{activation}.pth"
     model.load_state_dict(torch.load(model_filename, map_location=device))
     model.eval()
     return model
