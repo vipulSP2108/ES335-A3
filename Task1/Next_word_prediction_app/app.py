@@ -17,7 +17,7 @@ torch._dynamo.config.suppress_errors = True
 # Check for GPU
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # print(f"Supported Device: {device}\n\n")
-file = open("1661-0.txt", "r")
+file = open("Task1/Next_word_prediction_app/1661-0.txt", "r")
 Sherlock = file.read()
 filtered_text = re.sub(r"[^a-zA-Z0-9\s.]", "", Sherlock)  # Keep alphanumeric and period
 words = (filtered_text.lower().split())[0:int((107510)/2.5)]  # Split by whitespace and lowercase
