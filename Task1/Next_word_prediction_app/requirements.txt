@@ -5,4 +5,4 @@ st-annotated-text
 numpy
 torch
 torchvision
-sklearn
+scikit-learn
