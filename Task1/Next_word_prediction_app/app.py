@@ -128,7 +128,7 @@ def main():
     "Select Context length. ", (3, 5, 10))
 
     activation = st.sidebar.selectbox(
-    "Select Activation Function. ", ("tanh", "ReLU"))
+    "Select Activation Function. ", ("tanh", "relu"))
 
     embedding_dim = st.sidebar.selectbox(
     "Select embedding dimension. ", (32, 64, 128))
